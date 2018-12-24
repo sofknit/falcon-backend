@@ -1,0 +1,25 @@
+{
+  "name": "falcon-backend",
+  "version": "1.0.0",
+  "description": "API for falcon application",
+  "main": "app.js",
+  "scripts": {
+    "sequelize": "./node_modules/.bin/sequelize"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/soft-init/falcon-backend.git"
+  },
+  "author": "Darsh Pratap",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/soft-init/falcon-backend/issues"
+  },
+  "homepage": "https://github.com/soft-init/falcon-backend#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "pg": "^7.7.1",
+    "sequelize": "^4.42.0",
+    "sequelize-cli": "^5.4.0"
+  }
+}
