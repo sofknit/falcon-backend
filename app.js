@@ -7,7 +7,8 @@ const express = require ('Express'),
 
 const environment = process.env.NODE_ENV,
   stage = require ('./config.js')[environment],
-  authRouter = require ('./routes/authentication')
+  authRouter = require ('./routes/authentication'),
+  profileRouter = require ('./routes/profile')
 ;
 
 app.use (bodyParser.json());
@@ -19,11 +20,14 @@ if (environment !== 'production') {
 }
 
 app.use ('/auth', authRouter);
+app.use ('/me', passport.authenticate('jwt', { session : false }), profileRouter);
 
-app.use('/api/v1', (req, res, next) => {
-  res.send('Hello');
-  next();
+//Handle errors
+app.use(function(err, req, res, next) {
+  res.status(err.status || 500);
+  res.json({ error : err });
 });
+
 
 app.listen(`${stage.port}`, () => {
   console.log(`Server now listening at localhost:${stage.port}`);
