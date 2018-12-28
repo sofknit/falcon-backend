@@ -11,7 +11,7 @@
     "type": "git",
     "url": "git+https://github.com/soft-init/falcon-backend.git"
   },
-  "author": "Darsh Pratap",
+  "author": "Soft Init",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/soft-init/falcon-backend/issues"
